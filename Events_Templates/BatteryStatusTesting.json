@@ -1,0 +1,9 @@
+{
+    "messages": [
+        {
+            "inputName": "BatteryStatusChangeInput",
+            "messageId": "b7fe3b8f-c277-4451-ac61-c728b83c8c2f",
+            "payload": "{\"BatteryLife\":22,\"serial_number\":\"sp-area1-sensor1\",\"timestamp\":1592166397,\"status\":\"online\",\"guid\":\"8adee008c0734419abc4f4a8e3f86938\",\"IsOccupied\":1}"
+        }
+    ]
+}

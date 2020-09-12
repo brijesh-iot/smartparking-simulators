@@ -1,0 +1,6 @@
+status_id,serial_number,status,BatteryLife,IsOccupied,user_code,parking_start_time,parking_end_time,comment,scan,timestamp
+1,sp-area1-sensor1,NULL,100,0,NULL,NULL,NULL,NULL,0,"2020-04-30 18:43:34"
+2,sp-area1-sensor2,NULL,100,0,NULL,NULL,NULL,NULL,0,"2020-04-30 18:45:25"
+3,sp-area1-sensor3,NULL,100,0,NULL,NULL,NULL,NULL,0,"2020-04-30 18:45:25"
+4,sp-area1-sensor4,NULL,100,0,NULL,NULL,NULL,NULL,0,"2020-04-30 18:45:25"
+5,sp-area1-sensor5,NULL,100,0,NULL,NULL,NULL,NULL,0,"2020-04-30 18:46:30"

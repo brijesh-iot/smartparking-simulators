@@ -1,0 +1,6 @@
+a,b,c,d,e,f,g,h,i,j,k
+1,sp-area1-sensor1,smart_parking,sensor,1,$aws/rules/sp_device_registration_v1,spBv1.0/state1/DBIRTH/city1/area1/sp-area1-sensor1,$aws/rules/sp_device_status_v1,spBv1.0/state1/DDATA/city1/area1/sp-area1-sensor1,8adee008c0734419abc4f4a8e3f86938,4/30/2020 18:43
+2,sp-area1-sensor2,smart_parking,sensor,2,$aws/rules/sp_device_registration_v1,spBv1.0/state1/DBIRTH/city1/area1/sp-area1-sensor2,$aws/rules/sp_device_status_v1,spBv1.0/state1/DDATA/city1/area1/sp-area1-sensor2,28f63646dc054f6898d23fd450e0a395,4/30/2020 18:45
+3,sp-area1-sensor3,smart_parking,sensor,3,$aws/rules/sp_device_registration_v1,spBv1.0/state1/DBIRTH/city1/area1/sp-area1-sensor3,$aws/rules/sp_device_status_v1,spBv1.0/state1/DDATA/city1/area1/sp-area1-sensor3,28f63646dc054f6898d23fd450e0a396,4/30/2020 18:45
+4,sp-area1-sensor4,smart_parking,sensor,4,$aws/rules/sp_device_registration_v1,spBv1.0/state1/DBIRTH/city1/area1/sp-area1-sensor4,$aws/rules/sp_device_status_v1,spBv1.0/state1/DDATA/city1/area1/sp-area1-sensor4,28f63646dc054f6898d23fd450e0a397,4/30/2020 18:45
+5,sp-area1-sensor5,smart_parking,sensor,5,$aws/rules/sp_device_registration_v1,spBv1.0/state1/DBIRTH/city1/area1/sp-area1-sensor5,$aws/rules/sp_device_status_v1,spBv1.0/state1/DDATA/city1/area1/sp-area1-sensor5,28f63646dc054f6898d23fd450e0a398,4/30/2020 18:46

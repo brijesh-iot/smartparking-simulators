@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: IoT Edge application
+
+Parameters:
+  CoreName:
+    Description: Greengrass Core on which our resources will be deployed
+    Default: "coreName"
+    Type: String
+
+  IoTResourceS3Bucket:
+    Description: IoT Resource folder where Things generated certificates will be stored. Default value will be replaced from deploy.sh.
+    Default: "project-iotresources3bucket-x"
+    Type: String
+
+  IoTRuleDeviceRegister:
+    Description: Rule for device registration
+    Type: String
+    Default: sp_device_registration_v1
+
+  IoTRuleDeviceStatus:
+    Description: Rule for device status
+    Type: String
+    Default: sp_device_status_v1
+
+  IoTRuleDeviceDeath:
+    Description: Rule for device death
+    Type: String
+    Default: sp_device_death_v1
+
+  IoTEventSubEmail:
+    Description: IoT Events notification email address
+    Type: String
+    Default: bprajapati@deloitte.com
+
+Globals:
+  Function:
+    Timeout: 300
+
+Resources:
+
+  SetupRdsMySqlLF:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: setup-rds
+      Handler: index.handler
+      MemorySize: 1024
+      Runtime: nodejs12.x
+      Timeout: 300
+      AutoPublishAlias: prod
+      Tracing: Active
+      Policies:
+        - AWSLambdaExecute
+        - AmazonRDSReadOnlyAccess
+        - CloudWatchLogsFullAccess
+        - AmazonEC2FullAccess
+        - AWSXrayFullAccess
+      Environment:
+        Variables:
+          dbPass: !Sub '{{resolve:secretsmanager:SmartParkingRDSAdmin:SecretString:password}}'
+          dbUser: !Sub '{{resolve:secretsmanager:SmartParkingRDSAdmin:SecretString:username}}'
+          dbHost: !Sub '{{resolve:secretsmanager:SmartParkingRDSAdmin:SecretString:host}}'
+          dbName: !Sub '{{resolve:secretsmanager:SmartParkingRDSAdmin:SecretString:dbname}}'
+
+      Tags:
+        Project: !Ref CoreName
+        Name: SetupRdsMySqlLF
+      VpcConfig:
+        SecurityGroupIds:
+          - Fn::ImportValue:
+              !Sub "${CoreName}-EdgeGatewaySecurityGroup"
+        SubnetIds:
+          - Fn::ImportValue:
+              !Sub "${CoreName}-PublicSubnet1"
+          - Fn::ImportValue:
+              !Sub "${CoreName}-PublicSubnet2"
+
