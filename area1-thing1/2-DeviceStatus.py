@@ -7,7 +7,7 @@ import random
 
 mqttc = AWSIoTMQTTClient("smartparking_EdgeGatewayDevice")
 
-mqttc.configureEndpoint("greengrass-ats.iot.us-east-1.amazonaws.com",8883)
+mqttc.configureEndpoint("greengrass-ats.iot.us-west-2.amazonaws.com",8883)
 
 mqttc.configureCredentials("./root.ca.pem","./private.key","./cert.pem")
 
