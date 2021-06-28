@@ -95,8 +95,8 @@ insert into SMART_PARKING_ADDRESS_MASTER values (
 default, '["28.792667","-81.337820"]', '1000 Plantation Lakes Cir', 'Sanford', 'FL', '32771', 'f17019d1-fc59-44db-ad55-3a6d6e0ad585', current_timestamp()
 );
 
-insert into SMART_PARKING_SITE_ADDRESS_MPG values ( 4, 16 );
-insert into SMART_PARKING_SITE_ADDRESS_MPG values ( 5, 17 );
+insert into SMART_PARKING_SITE_ADDRESS_MPG values ( 1, 1 );
+insert into SMART_PARKING_SITE_ADDRESS_MPG values ( 2, 2 );
 
 
 
