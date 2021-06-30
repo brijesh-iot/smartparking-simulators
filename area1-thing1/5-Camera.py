@@ -10,7 +10,6 @@ mqttc = AWSIoTMQTTClient("smartparking_EdgeGatewayDevice")
 
 mqttc.configureEndpoint("greengrass-ats.iot.us-west-2.amazonaws.com",8883)
 mqttc.configureCredentials("./root.ca.pem","./private.key","./cert.pem")
-
 #Function to encode a payload into JSON
 def json_encode(string):
     return json.dumps(string)
@@ -26,16 +25,12 @@ while True:
     "timestamp": time.time(),
 	"metrics": [
 		 {
-			"name": "sp-area1-sensor1/BatteryLife",
-			"value": '10'
+			"name": "sp-area1-sensor1/scan",
+			"value": 0
 		 },
 		 {
-			"name": "sp-area1-sensor1/IsOccupied",
-			"value": 1
-		 },
-		 {
-			"name": "sp-area1-sensor1/comment",
-			"value": 'Device Maintanance'
+			"name": "sp-area1-sensor1/user_code",
+			"value": 'KDZD-95'
 		 }
 	]
   }
@@ -47,7 +42,7 @@ while True:
 
   print "Connected to the Greengrass core!"
 
-  mqttc.publish("spBv1.0/state1/DDEATH/city1/area1/sp-area1-sensor1", message, 0)
+  mqttc.publish("spBv1.0/state1/DDATA/city1/area1/sp-area1-sensor1", message, 0)
 
 
   print "Message Published"

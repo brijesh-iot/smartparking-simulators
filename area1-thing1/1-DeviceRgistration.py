@@ -28,7 +28,7 @@ for x in range(1, 2):
 	'metrics': [
 		 {
 			'name': 'sp-area1-sensor%s/BatteryLife' %(x),
-			'value': '100%'
+			'value': 100
 		 },
 		 {
 			'name': 'sp-area1-sensor%s/IsOccupied' %(x),
